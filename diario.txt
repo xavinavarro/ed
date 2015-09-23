@@ -1,0 +1,27 @@
+    1  sudo apt-get install git
+    2  git clone https://github.com/xavinavarro/ed.git
+    3  ls -l
+    4  clear
+    5  git status
+    6  cd ed/
+    7  git status
+    8  gedit hola-mundo-git.txt
+    9  git status
+   10  git add hola-mundo-git.txt 
+   11  git status
+   12  git config --global user.name "XaviNavarro"
+   13  git config --global user.email "dam.xnavarro@institutoserpis.org"
+   14  git config --list
+   15  git commit -m "Primer Commit de Prueba"
+   16  git log
+   17  git push
+   18  ls
+   19  cd ed
+   20  git push
+   21  git config --global push.default simple
+   22  git config --list
+   23  git push
+   24  git status
+   25  gedit diario.txt&
+   26  history
+   27  history > diario.txt
