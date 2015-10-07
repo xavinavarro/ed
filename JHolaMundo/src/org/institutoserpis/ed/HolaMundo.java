@@ -1,9 +1,14 @@
 package org.institutoserpis.ed;
 
+import java.util.Scanner;
+
 public class HolaMundo {
 
 	public static void main(String[] args) {
-		System.out.println("Hola mundo desde eclipse");
+		Scanner scanner = new Scanner(System.in);
+		String nombre = scanner.nextLine();
+		System.out.printf("Hola %s desde eclipse",nombre);
+		
 	}
 
 }
