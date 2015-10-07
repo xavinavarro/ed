@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class HolaMundo {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		String nombre = scanner.nextLine();
+		Scanner escaner = new Scanner(System.in);
+		String nombre = escaner.nextLine();
 		System.out.printf("Hola %s desde eclipse",nombre);
 		
 	}
