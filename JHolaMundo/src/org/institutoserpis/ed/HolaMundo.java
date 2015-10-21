@@ -8,7 +8,5 @@ public class HolaMundo {
 		Scanner scanner = new Scanner(System.in);
 		String nombre = scanner.nextLine();
 		System.out.printf("Hola %s desde eclipse",nombre);
-		
 	}
-
 }
