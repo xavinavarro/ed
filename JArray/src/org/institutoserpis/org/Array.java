@@ -2,7 +2,6 @@ package org.institutoserpis.org;
 
 public class Array {
 
-	private static int[] ws;
 	public static void main(String[] args) {
 		
 		int[] v = new int[]{5, 9, 7, 12, 21};
@@ -35,7 +34,14 @@ public class Array {
 		
 	}
 	public static int indexOf(int[] v,int item){
-		return 0;
+		int index= -1;
+		
+		for(int i =0; index < v.length; index++){
+			if (v[index]<item){
+				index=i;
+			
+			}
 	}
-
+		return index;
+		}
 }
