@@ -3,12 +3,35 @@ using Gtk;
 
 public partial class MainWindow: Gtk.Window
 {	
+	private Random random;
+
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
+	
+
 		Build ();
 		random = new Random ();
 		random.Next(90)
+		
 		Table table = new Table (9, 10, true);
+		ListStore<int> numeros=new List <int> ();
+
+		for (uint index=0;index<90; index++){
+			uint row= index / 10;
+			uint column = index %10;
+			int numero = index+1;
+			Button button = new Button();
+			button.Label=numero.ToString();
+			button.Visible = true;
+			table.Attach (button, column, column +1, row, row+1);
+			buttons.Add (button);
+			numeros.Add (numero);
+		}
+
+
+
+
+
 
 		Button button = new Button ();
 		button.Label = "1";
@@ -21,6 +44,7 @@ public partial class MainWindow: Gtk.Window
 
 		Button b = new Button();
 		b.ModifyBg(StateType.Normal, new Gdk.Color(0,255,0));
+		Process.Start ("espeak", "-v es" + indexAleatorio);
 
 		table.Visible = true;
 		vbox1.Add (table);
