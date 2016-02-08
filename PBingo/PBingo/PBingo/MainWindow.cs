@@ -4,7 +4,8 @@ using Gtk;
 public partial class MainWindow: Gtk.Window
 {	
 	private Random random;
-
+	private Table table;
+	private List<Button> Buttons;
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 	
@@ -13,8 +14,8 @@ public partial class MainWindow: Gtk.Window
 		random = new Random ();
 		random.Next(90)
 		
-		Table table = new Table (9, 10, true);
-		ListStore<int> numeros=new List <int> ();
+		table = new Table (9, 10, true);
+		List <int> numeros=new List <int> ();
 
 		for (uint index=0;index<90; index++){
 			uint row= index / 10;
@@ -33,7 +34,7 @@ public partial class MainWindow: Gtk.Window
 
 
 
-		Button button = new Button ();
+		button = new Button ();
 		button.Label = "1";
 		button.Visible = true;
 
