@@ -1,31 +1,32 @@
-﻿using System;
+using System;
+using System.Data;
 
 namespace CCategoria
 {
-	[System.ComponentModel.ToolboxItem (true)]
 	public partial class CategoriaView : Gtk.Window
 	{
 		public CategoriaView () : base(Gtk.WindowType.Toplevel){
 			this.Build ();
-
 			saveAction.Activated += delegate {
-				IDbCommand dbCommand = App.Instance.DbConnection.CreateCommand ();
-				dbCommand.ComandText = 
-					"insert into categoria (nombre) values ('El nuevo nombre')";
-				String nombre = entryNombre.Text;
-				Console.WriteLine ("SaveAction.Activated");
+				IDbCommand dbCommand= App.Instance.DbConnection.CreateCommand();
+				dbCommand.CommandText="insert into categoria (nombre) values (@nombre)";
+				string nombre = entryNombre.Text;
 
 
 				dbCommandAddParameter(dbCommand, "nombre", nombre);
+				dbCommand.ExecuteNonQuery();
 
-				dbCommand.ExecuteNonQuery ();
+				Console.WriteLine ("saveAction.Activated");
 			};
-	}
-		private void dbCommandAddParameter(IDbCommand dbCommand, string parameterName, object value){
-			IDbDataparameter dbDataParameter = dbCommand.CreateParameter ();
+		}
+		private void dbCommandAddParameter(IDbCommand dbCommand, 
+		   string parameterName, object value){
+			/*IDbDataParameter dbDataParameter=dbCommand.CreateParameter();
 			dbDataParameter.ParameterName = parameterName;
-			dbDataParameter.Value = value;
-			dbCommand.Parameters.Add (dbDataParameter);
+			dbDataParameter.Value=value;
+			dbCommand.Parameters.Add(dbDataParameter);*/
+
 		}
 	}
 }
+

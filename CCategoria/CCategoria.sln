@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCategoria", "CCategoria\CCategoria.csproj", "{FB965A8B-34FC-49E0-A90F-A80910D5FAB0}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCategoria", "CCategoria\CCategoria.csproj", "{06CFFCF1-335E-4F55-9261-70ACA0C64F3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,12 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB965A8B-34FC-49E0-A90F-A80910D5FAB0}.Debug|x86.ActiveCfg = Debug|x86
-		{FB965A8B-34FC-49E0-A90F-A80910D5FAB0}.Debug|x86.Build.0 = Debug|x86
-		{FB965A8B-34FC-49E0-A90F-A80910D5FAB0}.Release|x86.ActiveCfg = Release|x86
-		{FB965A8B-34FC-49E0-A90F-A80910D5FAB0}.Release|x86.Build.0 = Release|x86
+		{06CFFCF1-335E-4F55-9261-70ACA0C64F3A}.Debug|x86.ActiveCfg = Debug|x86
+		{06CFFCF1-335E-4F55-9261-70ACA0C64F3A}.Debug|x86.Build.0 = Debug|x86
+		{06CFFCF1-335E-4F55-9261-70ACA0C64F3A}.Release|x86.ActiveCfg = Release|x86
+		{06CFFCF1-335E-4F55-9261-70ACA0C64F3A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = CCategoria\CCategoria.csproj
 	EndGlobalSection
 EndGlobal
