@@ -12,6 +12,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        DbPruebaOpenHelper.init(this);
+        /*
+        DbPruebaOpenHelper.getInstance().insertCategoria("Categoria 1");
+        DbPruebaOpenHelper.getInstance().insertCategoria("Categoria 2");
+        DbPruebaOpenHelper.getInstance().insertCategoria("Categoria 3");
+        */
+
 
         ListView listview = (ListView) findViewById(R.id.listView);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
