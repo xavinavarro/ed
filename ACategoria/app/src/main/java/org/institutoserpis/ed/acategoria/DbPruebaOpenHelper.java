@@ -1,11 +1,13 @@
 package org.institutoserpis.ed.acategoria;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 import android.provider.BaseColumns;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,14 +17,18 @@ public class DbPruebaOpenHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "dbprueba.db";
     private static final int DATABASE_VERSION= 1;
 
-    private static Context;
+
+
+    private static Context context;
     public static void init(Context context){
         DbPruebaOpenHelper.context = context;
     }
+
+
     private static DbPruebaOpenHelper instance;
     public static DbPruebaOpenHelper getInstance(){
         if (instance == null)
-            instance = DbPruebaOpenHelper(context);
+            instance = new DbPruebaOpenHelper(context);
         return instance;
     }
 
@@ -63,6 +69,24 @@ public class DbPruebaOpenHelper extends SQLiteOpenHelper {
 
     public List<Categoria> getCategorias(){
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        sqLiteDatabase.query();
+        //TODO sqLiteDatabase.query();
+        String[] columns = new String[]{
+                TableCategoria._ID,
+                TableCategoria.COLUMN_NOMBRE
+        };
+        Cursor cursor = sqLiteDatabase.query(
+                TableCategoria.NAME,
+                columns,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        List<Categoria> categorias = new ArrayList<>();
+        while (cursor.moveToNext())
+            categorias.add(new Categoria(cursor.getLong(0),cursor.getString(1)));
+        cursor.close();
+        return categorias;
     }
 }

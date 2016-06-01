@@ -8,7 +8,7 @@ public class Categoria {
     public String nombre;
 
     public Categoria(long id, String nombre){
-        this.id;
+        this.id=id;
         this.nombre = nombre;
     }
     @Override
