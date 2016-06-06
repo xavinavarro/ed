@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         DbPruebaOpenHelper.getInstance().insertCategoria("Categoria 3");
         */
 
-
         List<Categoria> categorias = DbPruebaOpenHelper.getInstance().getCategorias();
 
         ListView listview = (ListView)findViewById(R.id.listView);
